@@ -1,0 +1,11 @@
+
+location /{user}/api/
+{
+        proxy_pass http://tzaeru.com:9201/;
+}
+
+location /{user} {
+        autoindex on;
+        error_page 404 /{user}/;
+        alias /home/{user}/public;
+}
